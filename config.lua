@@ -1,4 +1,4 @@
-Config = {}
+Config = {} 
 Config.MaxWidth = 5.0
 Config.MaxHeight = 5.0
 Config.MaxLength = 5.0
