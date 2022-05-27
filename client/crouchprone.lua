@@ -18,13 +18,13 @@ CreateThread(function()
                     SetPedMovementClipset(ped, "move_ped_crouched",1.0)
                     SetPedWeaponMovementClipset(ped, "move_ped_crouched",1.0)
                     SetPedStrafeClipset(ped, "move_ped_crouched_strafing",1.0)
-                elseif stage == 3 then
-                    ClearPedTasks(ped)
-                    RequestAnimSet("move_crawl")
-                    while not HasAnimSetLoaded("move_crawl") do
-                        Wait(0)
-                    end
-                elseif stage > 3 then
+--                 elseif stage == 3 then
+--                     ClearPedTasks(ped)
+--                     RequestAnimSet("move_crawl")
+--                     while not HasAnimSetLoaded("move_crawl") do
+--                         Wait(0)
+--                     end
+                elseif stage > 2 then
                     stage = 0
                     ClearPedTasksImmediately(ped)
                     ResetAnimSet()
