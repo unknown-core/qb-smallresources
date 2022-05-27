@@ -1,43 +1,43 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
 local Webhooks = {
-    ['default'] = '',
-    ['testwebhook'] = '',
-    ['playermoney'] = '',
-    ['playerinventory'] = '',
-    ['robbing'] = '',
-    ['cuffing'] = '',
-    ['drop'] = '',
-    ['trunk'] = '',
-    ['stash'] = '',
-    ['glovebox'] = '',
-    ['banking'] = '',
-    ['vehicleshop'] = '',
-    ['vehicleupgrades'] = '',
-    ['shops'] = '',
-    ['dealers'] = '',
-    ['storerobbery'] = '',
-    ['bankrobbery'] = '',
-    ['powerplants'] = '',
-    ['death'] = '',
-    ['joinleave'] = '',
-    ['ooc'] = '',
-    ['report'] = '',
-    ['me'] = '',
-    ['pmelding'] = '',
-    ['112'] = '',
-    ['bans'] = '',
-    ['anticheat'] = '',
-    ['weather'] = '',
-    ['moneysafes'] = '',
-    ['bennys'] = '',
-    ['bossmenu'] = '',
-    ['robbery'] = '',
-    ['casino'] = '',
-    ['traphouse'] = '',
-    ['911'] = '',
-    ['palert'] = '',
-    ['house'] = '',
+    ['default'] = GetConvar('default_webhook', ''),
+    ['testwebhook'] = GetConvar('testwebhook_webhook', ''),
+    ['playermoney'] = GetConvar('playermoney_webhook', ''),
+    ['playerinventory'] = GetConvar('playerinventory_webhook', ''),
+    ['robbing'] = GetConvar('robbing_webhook', ''),
+    ['cuffing'] = GetConvar('cuffing_webhook', ''),
+    ['drop'] = GetConvar('drop_webhook', ''),
+    ['trunk'] = GetConvar('trunk_webhook', ''),
+    ['stash'] = GetConvar('stash_webhook', ''),
+    ['glovebox'] = GetConvar('glovebox_webhook', ''),
+    ['banking'] = GetConvar('banking_webhook', ''),
+    ['vehicleshop'] = GetConvar('vehicleshop_webhook', ''),
+    ['vehicleupgrades'] = GetConvar('vehicleupgrades_webhook', ''),
+    ['shops'] = GetConvar('shops_webhook', ''),
+    ['dealers'] = GetConvar('dealers_webhook', ''),
+    ['storerobbery'] = GetConvar('storerobbery_webhook', ''),
+    ['bankrobbery'] = GetConvar('bankrobbery_webhook', ''),
+    ['powerplants'] = GetConvar('powerplants_webhook', ''),
+    ['death'] = GetConvar('death_webhook', ''),
+    ['joinleave'] = GetConvar('joinleave_webhook', ''),
+    ['ooc'] = GetConvar('ooc_webhook', ''),
+    ['report'] = GetConvar('report_webhook', ''),
+    ['me'] = GetConvar('me_webhook', ''),
+    ['pmelding'] = GetConvar('pmelding_webhook', ''),
+    ['112'] = GetConvar('112_webhook', ''),
+    ['bans'] = GetConvar('bans_webhook', ''),
+    ['anticheat'] = GetConvar('anticheat_webhook', ''),
+    ['weather'] = GetConvar('weather_webhook', ''),
+    ['moneysafes'] = GetConvar('moneysafes_webhook', ''),
+    ['bennys'] = GetConvar('bennys_webhook', ''),
+    ['bossmenu'] = GetConvar('bossmenu_webhook', ''),
+    ['robbery'] = GetConvar('robbery_webhook', ''),
+    ['casino'] = GetConvar('casino_webhook', ''),
+    ['traphouse'] = GetConvar('traphouse_webhook', ''),
+    ['911'] = GetConvar('911_webhook', ''),
+    ['palert'] = GetConvar('palert_webhook', ''),
+    ['house'] = GetConvar('house_webhook', ''),
 }
 
 local Colors = { -- https://www.spycolor.com/
@@ -65,15 +65,15 @@ RegisterNetEvent('qb-log:server:CreateLog', function(name, title, color, message
             },
             ['description'] = message,
             ['author'] = {
-                ['name'] = 'QBCore Logs',
-                ['icon_url'] = 'https://media.discordapp.net/attachments/870094209783308299/870104331142189126/Logo_-_Display_Picture_-_Stylized_-_Red.png?width=670&height=670',
+                ['name'] = 'Log',
+                ['icon_url'] = 'https://media.discordapp.net/attachments/971943172945092650/979708683678269491/incognito3.png?width=482&height=482',
             },
         }
     }
-    PerformHttpRequest(webHook, function() end, 'POST', json.encode({ username = 'QB Logs', embeds = embedData}), { ['Content-Type'] = 'application/json' })
+    PerformHttpRequest(webHook, function() end, 'POST', json.encode({ username = 'Log', embeds = embedData}), { ['Content-Type'] = 'application/json' })
     Citizen.Wait(100)
     if tag then
-        PerformHttpRequest(webHook, function() end, 'POST', json.encode({ username = 'QB Logs', content = '@everyone'}), { ['Content-Type'] = 'application/json' })
+        PerformHttpRequest(webHook, function() end, 'POST', json.encode({ username = 'Log', content = '@everyone'}), { ['Content-Type'] = 'application/json' })
     end
 end)
 
